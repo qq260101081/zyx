@@ -80,8 +80,7 @@ class SiteController extends Controller
     {
         // 微信网页授权:
         if(Yii::$app->wechat->isWechat && !Yii::$app->wechat->isAuthorized()) {
-            return Yii::$app->wechat->authorizeRequired()->send();$returnUrl = Yii::$app->request->hostInfo . '/site/we-auth';
-            Yii::$app->wechat->oauth->scopes(['snsapi_userinfo'])->redirect($returnUrl)->send();
+            return Yii::$app->wechat->authorizeRequired()->send();
         }
     }
     /**
